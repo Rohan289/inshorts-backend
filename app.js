@@ -1,8 +1,9 @@
 // app.js
 const express = require('express');
+const cors = require('cors');
 const { covidDataStateWise } = require('./covidData');
 const app = express();
-
+app.use(cors());
 app.get('/', (req, res) => res.send('Hello!'));
 app.get("/list_covid_state_wise", (req, res) => {
    let response = [];
